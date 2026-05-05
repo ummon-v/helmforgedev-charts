@@ -3,7 +3,7 @@ apiVersion: v2
 name: homarr
 description: Homarr - modern application dashboard with SQLite, PostgreSQL, or MySQL, Kubernetes integration, and S3 backup.
 type: application
-version: 1.1.7
+version: 1.1.10
 appVersion: "1.60.0"
 home: https://helmforge.dev
 icon: https://helmforge.dev/icons/charts/homarr.png
@@ -22,11 +22,7 @@ sources:
 annotations:
   artifacthub.io/changes: |
     - kind: changed
-      description: update Homarr image to v1.60.0 (#210)
-    - kind: changed
-      description: update PostgreSQL dependency to 1.10.0 and MySQL dependency to 1.9.1
-    - kind: changed
-      description: remove Chart.lock from the chart source package per maintainer policy
+      description: "upgrade to 1.60.0 (#226)"
   artifacthub.io/maintainers: |
     - name: HelmForge
       email: berlofa@helmforge.dev

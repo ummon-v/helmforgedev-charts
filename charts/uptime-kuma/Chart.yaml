@@ -3,7 +3,7 @@ apiVersion: v2
 name: uptime-kuma
 description: Uptime Kuma self-hosted monitoring with HTTP/TCP/DNS/Ping checks, notifications, status pages, and optional MariaDB
 type: application
-version: 1.5.1
+version: 1.5.5
 appVersion: "2.3.2"
 kubeVersion: ">=1.26.0-0"
 maintainers:
@@ -23,11 +23,9 @@ icon: https://helmforge.dev/icons/charts/uptime-kuma.png
 annotations:
   artifacthub.io/changes: |
     - kind: changed
-      description: "upgrade Uptime Kuma to 2.3.2 (#215)"
+      description: "upgrade to 2.3.2 (#221)"
     - kind: changed
-      description: "refresh MySQL subchart dependency (#215)"
-    - kind: fixed
-      description: align metadata and remove bump yaml files (#83)
+      description: "add Phase 3-4 operational intelligence and cleanup (#142)"
   artifacthub.io/maintainers: |
     - name: HelmForge
       email: berlofa@helmforge.dev

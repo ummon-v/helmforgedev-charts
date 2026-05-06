@@ -1,0 +1,8 @@
+# SPDX-License-Identifier: Apache-2.0
+# WordPress Service with IPv4/IPv6 dual-stack preference
+
+service:
+  ipFamilyPolicy: PreferDualStack
+  ipFamilies:
+    - IPv4
+    - IPv6

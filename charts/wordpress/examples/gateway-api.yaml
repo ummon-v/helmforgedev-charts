@@ -1,0 +1,18 @@
+# SPDX-License-Identifier: Apache-2.0
+# WordPress exposed through Kubernetes Gateway API
+
+gatewayAPI:
+  enabled: true
+  parentRefs:
+    - name: public
+      namespace: gateway-system
+      sectionName: https
+  hostnames:
+    - blog.example.com
+
+wordpress:
+  siteUrl: https://blog.example.com
+  forceSSLAdmin: true
+
+service:
+  type: ClusterIP

@@ -4,11 +4,11 @@ The chart includes a CronJob-based backup system that creates database dumps and
 
 ## How It Works
 
-```
+```text
 CronJob (scheduled)
-├── Init 1: mysqldump → database dump (.sql.gz)
-├── Init 2: tar wp-content → content archive (.tar.gz)
-└── Main: minio/mc upload both to S3
+|-- Init 1: mysqldump -> database dump (.sql.gz)
+|-- Init 2: tar wp-content -> content archive (.tar.gz)
+`-- Main: minio/mc upload both to S3
 ```
 
 1. **dump-database** (init container, `mysql:8.4`): Runs `mysqldump` against the database, compresses with gzip
@@ -41,6 +41,32 @@ backup:
 ```
 
 The secret must contain `access-key` and `secret-key` keys.
+
+With External Secrets Operator:
+
+```yaml
+backup:
+  enabled: true
+  s3:
+    endpoint: https://s3.amazonaws.com
+    bucket: wordpress-backups
+
+externalSecrets:
+  enabled: true
+  secretStoreRef:
+    name: vault
+    kind: ClusterSecretStore
+  backup:
+    enabled: true
+    accessKeyRemoteRef:
+      key: prod/wordpress-backup
+      property: access-key
+    secretKeyRemoteRef:
+      key: prod/wordpress-backup
+      property: secret-key
+```
+
+When `externalSecrets.backup.enabled` is true, the chart renders the S3 credentials through `external-secrets.io/v1` and does not render the native backup Secret.
 
 ## Database Credential Overrides
 

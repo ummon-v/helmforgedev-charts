@@ -1,0 +1,10 @@
+# SPDX-License-Identifier: Apache-2.0
+# Run WordPress cron through a Kubernetes CronJob
+
+wordpress:
+  disableWpCron: true
+
+wpCron:
+  cronJob:
+    enabled: true
+    schedule: "*/5 * * * *"

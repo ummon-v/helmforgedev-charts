@@ -3,7 +3,7 @@ apiVersion: v2
 name: umami
 description: Umami privacy-first web analytics with PostgreSQL, Gateway API, External Secrets, backups, and production controls
 type: application
-version: 1.2.10
+version: 2.0.0
 appVersion: "3.1.0"
 kubeVersion: ">=1.26.0-0"
 maintainers:
@@ -27,11 +27,7 @@ icon: https://helmforge.dev/icons/charts/umami.png
 annotations:
   artifacthub.io/changes: |
     - kind: changed
-      description: "modernize production deployment controls for Umami"
-    - kind: changed
-      description: "upgrade to 3.1.0 (#222)"
-    - kind: changed
-      description: "add Phase 3-4 operational intelligence and cleanup (#142)"
+      description: "BREAKING: modernize production chart (#241)"
   artifacthub.io/maintainers: |
     - name: HelmForge
       email: berlofa@helmforge.dev

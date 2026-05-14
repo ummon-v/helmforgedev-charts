@@ -3,7 +3,7 @@ apiVersion: v2
 name: mongodb
 description: MongoDB Helm Chart - standalone, replica set, or sharded cluster using the official MongoDB image
 type: application
-version: 1.7.10
+version: 1.7.11
 appVersion: "8.2.7"
 kubeVersion: ">=1.26.0-0"
 maintainers:
@@ -23,7 +23,7 @@ icon: https://helmforge.dev/icons/charts/mongodb.png
 annotations:
   artifacthub.io/changes: |
     - kind: fixed
-      description: "address post-review P1/P2 findings (#177)"
+      description: "fix mongodb url option for exporter pod (#257)"
   artifacthub.io/maintainers: |
     - name: HelmForge
       email: berlofa@helmforge.dev

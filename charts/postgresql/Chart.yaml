@@ -3,7 +3,7 @@ apiVersion: v2
 name: postgresql
 description: PostgreSQL for Kubernetes with explicit standalone and replication modes
 type: application
-version: 2.0.0
+version: 2.0.1
 appVersion: "18.3"
 kubeVersion: ">=1.26.0-0"
 maintainers:
@@ -21,10 +21,8 @@ sources:
 icon: https://helmforge.dev/icons/charts/postgresql.png
 annotations:
   artifacthub.io/changes: |
-    - kind: changed
-      description: "BREAKING: add production hardening controls (#233)"
-    - kind: changed
-      description: "add Phase 3-4 operational intelligence and cleanup (#142)"
+    - kind: fixed
+      description: "allow disabling default initdb bootstrap (#259)"
   artifacthub.io/maintainers: |
     - name: HelmForge
       email: berlofa@helmforge.dev
